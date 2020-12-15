@@ -5,6 +5,7 @@ import router from './routes.js'
 import store from './store.js'
 
 axios.defaults.baseURL = "https://cis410-fa20-huskisson-api1.azurewebsites.net";
+// axios.defaults.baseURL = "http://localhost:5000";
 
 new Vue({
   el: '#app',

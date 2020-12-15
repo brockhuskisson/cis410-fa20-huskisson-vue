@@ -8,18 +8,21 @@
         
         <table v-if="ordersByUser" class = "table">
             <thead>
-                <th>Price</th>
+                <th>Brand Name</th>
                 <th>Type</th>
                 <th>Material</th>
                 <th>Size</th>
+                <th>Quantity</th>
+
             </thead>
             <tbody>
                 <tr v-for="thisOrder in ordersByUser" :key="thisOrder.OrderPK"> 
                     <th><router-link :to="`/clothes/${thisOrder.ClothesFK}`">
-                    {{thisOrder.Price}}</router-link></th>
+                    {{thisOrder.BrandName}}</router-link></th>
                     <th>{{thisOrder.Type}}</th>
                     <th>{{thisOrder.Material}}</th>
                     <th>{{thisOrder.Size}}</th>
+                    <th>{{thisOrder.Quantity}}</th>
                 </tr>
             </tbody>
         </table>
