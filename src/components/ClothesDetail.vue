@@ -9,13 +9,16 @@
            </div>
        </div>
         <br/>
-       <router-link v-if="auth" :to="`/clothes/${this.$route.params.pk}/order`">
-       <button type ="button" class = "btn btn-success">Place an Order</button>
+       <router-link v-if="auth" :to="`/clothes/${this.$route.params.pk}/Order`">
+       <button type ="button" class="btn btn-success">Place an Order</button>
        </router-link>
 
        <router-link v-else :to="`/signin`">
        <button type ="button" class = "btn btn-outline-success">Sign In to Place an Order</button>
        </router-link>
+       <br/>
+       <br/>
+       <router-view></router-view>
     </div>
 </template>
 

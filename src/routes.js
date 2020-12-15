@@ -26,7 +26,7 @@ const routes = [
     {path: '/clothes', component: Clothes},
     {path: '/clothes/:pk', component: ClothesDetail,
         children: [
-            {path: 'order', component: OrderCreate}
+            {path: 'Order', component: OrderCreate}
         ]},
         {path: '/signup', component: Signup},
         {path: '/:invalidroute(.*)', component: NotFound}
