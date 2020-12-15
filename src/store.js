@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import routes from './routes.js'
 
 Vue.use(Vuex);
 
@@ -19,6 +20,10 @@ export default new Vuex.Store({
         },
         storeClothes(state, myClothes){
             state.clothes = myClothes
+        },
+        clearAuthData(state){
+            state.token = null;
+            state.user = null;
         }
 
     },
@@ -32,7 +37,21 @@ export default new Vuex.Store({
             .catch(()=>{
                 console.log("error in getClothes action")
             })
+        },
+        logout({commit, state}){
+            axios.post('/customers/logout', null, {
+                headers:{
+                    Authorization: `Bearer ${state.token}`
+                }
+            });
+
+            commit('clearAuthData');
+
+            routes.replace("/");
+
+
         }
+
     }
 
 })
