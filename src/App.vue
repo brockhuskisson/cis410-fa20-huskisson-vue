@@ -27,6 +27,10 @@ export default {
   components:{
 
     "app-header":header
+    },
+    created(){
+      console.log("App created")
+      this.$store.dispatch("getClothes")
     }
 
 }
